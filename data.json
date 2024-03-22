@@ -1,0 +1,56 @@
+{
+    "special":[
+        {
+            "id": 1,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R55.00",
+            "poster": "./img/img-1.png"
+        },
+        {
+            "id": 2,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R245.00",
+            "poster": "./img/img-2.png"
+        },
+        {
+            "id": 3,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R85.00",
+            "poster": "./img/img-3.png"
+        },
+        {
+            "id": 4,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R60.00",
+            "poster": "./img/img-4.png"
+        }
+
+    ],
+    "popular":[
+        {
+            "id": 5,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R15.00",
+            "poster": "./img/img-15.png"
+        },
+        {
+            "id": 6,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R29.00",
+            "poster": "./img/img-16.png"
+        },
+        {
+            "id": 7,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R56.00",
+            "poster": "./img/img-17.png"
+        },
+        {
+            "id": 8,
+            "title": "Lorem ipsum dolor sit amet.",
+            "price": "R67.00",
+            "poster": "./img/img-18.png"
+        }
+
+    ]
+}

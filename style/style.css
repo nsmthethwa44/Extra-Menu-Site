@@ -1,0 +1,809 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+  line-height: 1.3;
+}
+
+@font-face {
+  font-family: --Oswald-Light;
+  src: url(../fonts/Oswald-Light.ttf);
+}
+@font-face {
+  font-family: --Oswald-Medium;
+  src: url(../fonts/Oswald-Medium.ttf);
+}
+@font-face {
+  font-family: --Oswald-SemiBold;
+  src: url(../fonts/Oswald-SemiBold.ttf);
+}
+:root {
+  --white: #fff;
+  --black: #000;
+  --crimson: #e64040;
+  --whiteIsh: #e2e2e2;
+  --color: #666666;
+  --boxShadow: 0 0 20px -10px rgba(0,0,0,0.5);
+  --borderColor: #c1c1c1;
+  --pFS: 1rem;
+  --hFS: 2rem;
+  --smallHfs: 1.2rem;
+  --pFF: --Oswald-Light;
+  --hFF: --Oswald-SemiBold;
+  --smallHff: --Oswald-Medium;
+  --containerWidth: 1200px;
+  --transition: all 400ms ease-in-out;
+}
+
+.container {
+  width: var(--containerWidth);
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.titleContainer .title {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--hFS);
+  font-family: var(--hFF);
+}
+
+h3 {
+  font-size: var(--smallHfs);
+  font-family: var(--smallHff);
+  font-weight: 600;
+}
+
+p {
+  color: var(--color);
+  font-size: var(--pFS);
+  font-family: var(--pFF);
+  font-weight: 600;
+}
+
+.button .btn {
+  outline: none;
+  border: none;
+  padding: 0.8rem 2rem;
+  color: var(--white);
+  font-size: var(--pFS);
+  font-family: var(--pFF);
+  font-weight: 600;
+  background: var(--crimson);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.button .btn:hover {
+  transform: scale(1.012);
+}
+
+.pt-pb {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.pl-pr {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hamburger {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/menu_40px.png);
+  background-size: 60% 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  display: none;
+}
+.hamburger.close {
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/close_40px.png);
+  background-size: 60% 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 400ms ease-in;
+  border-radius: 50%;
+}
+
+.header {
+  box-shadow: var(--boxShadow);
+  padding: 0.8rem 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--white);
+  transition: var(--transition);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.header .container .navbar .nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.header .container .navbar .nav li a {
+  font-size: var(--pFS);
+  font-family: var(--pFF);
+  color: var(--color);
+  transition: var(--transition);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.header .container .navbar .nav li a:hover, .header .container .navbar .nav li a.active {
+  color: var(--crimson);
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .container .textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.hero .container .textBox h3 {
+  color: var(--crimson);
+}
+.hero .container .textBox h1 {
+  color: var(--white);
+  font-size: 4rem;
+  font-family: var(--hFF);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.hero .container .textBox .button {
+  margin-top: 0.5rem;
+}
+
+.categories {
+  border: 1px solid var(--borderColor);
+}
+.categories .container .containerBox .box {
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+.categories .container .containerBox .box .boxImg {
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.categories .container .containerBox .box .boxImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.special .container {
+  width: 100%;
+}
+.special .container .containerBox {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.special .container .containerBox a .box {
+  padding: 30px 30px;
+  width: 100%;
+  border: 1px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  transition: var(--transition);
+}
+.special .container .containerBox a .box:hover {
+  background: var(--whiteIsh);
+}
+.special .container .containerBox a .box .boxImg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  height: 300px;
+}
+.special .container .containerBox a .box .boxImg .imgBox {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: var(--transition);
+}
+.special .container .containerBox a .box .textBox {
+  text-align: center;
+}
+.special .container .containerBox a .box .textBox h3 {
+  color: var(--black);
+}
+
+.cta .container {
+  width: 100%;
+}
+.cta .container .containerBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.cta .container .containerBox .box {
+  padding: 10rem 20px;
+  position: relative;
+  background: var(--whiteIsh);
+  border: 1px solid var(--borderColor);
+}
+.cta .container .containerBox .box .boxImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.cta .container .containerBox .box .boxImg .imgBox {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: var(--transition);
+}
+.cta .container .containerBox .box .textBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+  flex-direction: column;
+  text-align: center;
+}
+.cta .container .containerBox .box .textBox h2 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+.cta .container .containerBox .box .textBox h2 span {
+  color: var(--crimson);
+}
+.cta .container .containerBox .box .textBox .button {
+  margin-top: 0.5rem;
+}
+
+.menu .container {
+  width: 100%;
+}
+.menu .container .containerBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.menu .container .containerBox .box {
+  background: var(--whiteIsh);
+  padding: 20rem 20px;
+  position: relative;
+  border: 1px solid var(--borderColor);
+}
+.menu .container .containerBox .box .boxImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.menu .container .containerBox .box .boxImg .imgBox {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.menu .container .containerBox .box .textBox {
+  position: absolute;
+  top: 50%;
+  right: 5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.menu .container .containerBox .box .textBox h2 {
+  text-transform: uppercase;
+}
+.menu .container .containerBox .box .textBox h2 span {
+  font-style: italic;
+  text-transform: capitalize;
+}
+.menu .container .containerBox .box .textBox a {
+  font-size: var(--smallHfs);
+  font-family: var(--smallHff);
+  color: var(--black);
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.menu .container .containerBox .box .textBox a:hover {
+  color: var(--crimson);
+}
+
+.services {
+  background: var(--black);
+}
+.services .container {
+  width: 100%;
+}
+.services .container .containerBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.services .container .containerBox .box {
+  border: 1px solid var(--borderColor);
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.services .container .containerBox .box .fa-solid {
+  color: var(--crimson);
+  font-size: 3rem;
+}
+.services .container .containerBox .box .textBox h3 {
+  color: var(--crimson);
+}
+
+.popular .container {
+  width: 100%;
+}
+.popular .container .containerBox {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.popular .container .containerBox a .box {
+  padding: 30px 30px;
+  width: 100%;
+  border: 1px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  transition: var(--transition);
+}
+.popular .container .containerBox a .box:hover {
+  background: var(--whiteIsh);
+}
+.popular .container .containerBox a .box .boxImg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  height: 300px;
+}
+.popular .container .containerBox a .box .boxImg .imgBox {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: var(--transition);
+}
+.popular .container .containerBox a .box .textBox {
+  text-align: center;
+}
+.popular .container .containerBox a .box .textBox h3 {
+  color: var(--black);
+}
+
+.subscribe {
+  background: var(--whiteIsh);
+  border: 1 solid var(--borderColor);
+}
+.subscribe .container .containerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.subscribe .container .containerBox .box {
+  flex: 1 1 20rem;
+  align-self: normal;
+  display: flex;
+  align-items: center;
+}
+.subscribe .container .containerBox .box:nth-child(2) {
+  flex-basis: 45rem;
+}
+.subscribe .container .containerBox .box .textBox h3 {
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.subscribe .container .containerBox .box .form {
+  width: 100%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  position: relative;
+}
+.subscribe .container .containerBox .box .form .text {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-family: var(--pFF);
+  font-size: var(--pFS);
+  color: var(--color);
+  font-weight: 600;
+}
+.subscribe .container .containerBox .box .form .sub {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  font-family: var(--pFF);
+  font-size: var(--pFS);
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: var(--transition);
+  font-weight: 600;
+}
+.subscribe .container .containerBox .box .form .sub:hover {
+  background: var(--crimson);
+}
+.subscribe .container .containerBox .box .sciBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+.subscribe .container .containerBox .box .sciBox .boxIcon {
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--borderColor);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.subscribe .container .containerBox .box .sciBox .boxIcon:hover {
+  background: var(--crimson);
+  border-color: var(--crimson);
+}
+
+.footer {
+  border: 1px solid var(--borderColor);
+}
+.footer .container .containerBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.footer .container .containerBox .box h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.footer .container .containerBox .box .textBox p {
+  color: var(--crimson);
+  margin-bottom: 1rem;
+}
+.footer .container .containerBox .box .textBox p span {
+  color: var(--color);
+}
+.footer .container .containerBox .box .textBox ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.footer .container .containerBox .box .textBox ul li a {
+  font-size: var(--pFS);
+  font-family: var(--pFF);
+  color: var(--color);
+  font-weight: 600;
+  transform: var(--transition);
+}
+.footer .container .containerBox .box .textBox ul li a:hover {
+  color: var(--crimson);
+}
+
+.copyright {
+  padding: 1rem 20px;
+  background: var(--whiteIsh);
+}
+.copyright .container h6 {
+  font-family: var(--pFF);
+  font-size: var(--pFS);
+  color: var(--color);
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+.copyright .container h6 span {
+  color: var(--crimson);
+}
+
+.scrollTop .goTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--crimson);
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+  border: none;
+  box-shadow: var(--boxShadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 100;
+}
+.scrollTop .goTop.active {
+  display: flex;
+}
+
+.heroDetails {
+  height: 40vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/bg-details.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroDetails .container .textBox h1 {
+  text-align: center;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-family: var(--hFF);
+  color: var(--white);
+}
+
+.itemInfo {
+  background: var(--white);
+}
+.itemInfo .container .itemContainerBox {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  border-radius: 20px;
+  margin-top: -100px;
+  background: var(--white);
+}
+.itemInfo .container .itemContainerBox .box {
+  flex: 1 1 25rem;
+  align-self: normal;
+  position: relative;
+}
+.itemInfo .container .itemContainerBox .box .imgBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.itemInfo .container .itemContainerBox .box .imgBox .boxImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.itemInfo .container .itemContainerBox .box .textBox {
+  box-shadow: var(--boxShadow);
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.itemInfo .container .itemContainerBox .box .textBox p {
+  padding: 1rem 1rem;
+  background: var(--whiteIsh);
+}
+.itemInfo .container .itemContainerBox .box .textBox .button {
+  width: 100%;
+}
+.itemInfo .container .itemContainerBox .box .textBox .button .order {
+  width: 100%;
+}
+.itemInfo .container .backBtn .button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.itemInfo .container .backBtn .button .goBack {
+  background: var(--black);
+}
+
+@media screen and (max-width: 992px) {
+  .hamburger {
+    display: flex;
+  }
+  .header .container .navbar {
+    width: 100%;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    flex-flow: column;
+    padding: 20px 20px;
+    overflow: hidden;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    z-index: 12;
+    background: transparent;
+    -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(50px);
+    box-shadow: var(--boxShadow);
+    transition: var(--transition);
+    opacity: 0;
+    overflow: hidden;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .container .navbar.active {
+    opacity: 1;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .container .navbar .nav {
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    background: var(--whiteIsh);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+    transition: all 400ms ease-in-out;
+  }
+  .header .container .navbar .buttons {
+    width: 100%;
+  }
+  .header .container .navbar .buttons .btn {
+    width: 100%;
+  }
+  .hero .container .textBox h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+  }
+  .cta .container .containerBox .box .textBox h2 {
+    font-size: 2.5rem;
+  }
+  .special .container .containerBox {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .services .container .containerBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services .container .containerBox .box {
+    flex-direction: column;
+  }
+  .services .container .containerBox .box .textBox {
+    text-align: center;
+  }
+  .popular .container .containerBox {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .subscribe .container .containerBox {
+    flex-wrap: wrap;
+  }
+  .subscribe .container .containerBox .box .textBox {
+    width: 100%;
+    text-align: center;
+  }
+  .footer .container .containerBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .heroDetails .container .textBox h1 {
+    font-size: 2.5rem;
+  }
+  .itemInfo .container .itemContainerBox .box .textBox {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero .container .textBox h1 {
+    color: var(--white);
+    font-size: 2rem;
+  }
+  .heroDetails .container .textBox h1 {
+    font-size: 2rem;
+  }
+  .special .container .containerBox {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .cta .container .containerBox {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .cta .container .containerBox .box {
+    padding: 4rem 20px;
+  }
+  .cta .container .containerBox .box:nth-child(2) {
+    padding: 10rem 20px;
+  }
+  .cta .container .containerBox .box .textBox h2 {
+    font-size: 2rem;
+  }
+  .menu .container .containerBox {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .menu .container .containerBox .box {
+    padding: 10rem 20px;
+  }
+  .popular .container .containerBox {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .footer .container .containerBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .categories .container .containerBox .box {
+    flex-direction: column;
+  }
+  .categories .container .containerBox .box {
+    gap: 0.5rem;
+  }
+  .categories .container .containerBox .box h2 {
+    font-size: 1rem;
+  }
+  .itemInfo .container .itemContainerBox {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */
